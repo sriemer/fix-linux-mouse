@@ -1,3 +1,5 @@
+![](https://raw.githubusercontent.com/sriemer/fix-linux-mouse/master/fix-dell-mouse.jpg)
+
 # fix-linux-mouse howto
 
 Everthing in this howto relates to openSUSE Leap 42.2 but is mostly applicable
