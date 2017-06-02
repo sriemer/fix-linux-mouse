@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/sriemer/fix-linux-mouse/master/fix-dell-mouse.jpg)
+![](https://raw.githubusercontent.com/sriemer/fix-linux-mouse/master/mouse-hammer.jpg)
 
 # fix-linux-mouse howto
 
@@ -40,8 +40,10 @@ GPM_REPEAT=""
 ```
 
 This config is exactly what we need. Just enable the gpm service in your
-services manager (e.g. with YaST2) and your PS/2 capable USB mouse will
+services manager (e.g. with YaST2) and your PS/2 capable USB mouse should
 work on your VTs.
+
+Note: For some models a reboot is required first to get them into PS/2 mode.
 
 The supported mouse protocols/types can be displayed with the following command
 executed as root:
@@ -60,14 +62,16 @@ Mice usually don't work well with USB auto-suspend. It is safest to disable it
 completely by the kernel boot option `usbcore.autosuspend=-1`.
 
 It is also possible to blacklist certain devices. It depends if they are
-controlled by the laptop-mode-tools or pm-utils. There are enough howtos on the
-web for this.
+controlled by the `laptop-mode-tools` or the kernel directly. There are enough
+howtos on the web for this.
+
+[openSUSE USB power management](https://en.opensuse.org/Powersaving#USB_power_management)
 
 ### Dell USB mice
 
-Let's look at a Dell MS116 optical USB mouse. This one is a pure USB mouse and
-only works on the X Window System. The annoying bit is that it spams your VT
-and the kernel log with USB disconnect messages every minute:
+Let's look at a Dell MS116 optical USB mouse. This one is usually visible as a
+pure USB mouse. The annoying bit is that it spams your VT and the kernel log
+with USB disconnect messages every minute:
 ```
 [12334.243124] usb 3-14: USB disconnect, device number 12
 [12335.748073] usb 3-14: new low-speed USB device number 13 using xhci_hcd
@@ -79,15 +83,16 @@ and the kernel log with USB disconnect messages every minute:
 [12335.882034] hid-generic 0003:413C:301A.000A: input,hidraw1: USB HID v1.11 Mouse [PixArt Dell MS116 USB Optical Mouse] on usb-0000:00:14.0-14/input0
 ```
 Disconnecting it physically everytime you use the VT is no good option. It is
-missing a driver. So activate the gpm service and don't use the mouse there.
-The mouse won't work but these annoying messages are gone. If this still annoys
-you, then rather use a Logitech mouse. ;)
+missing a driver. So activate the gpm service and reboot. Before the reboot, the
+annoying messages are gone but it doesn't work on the VT yet. The mouse must be
+in PS/2 mode before starting the X Window System. That's the trick. ;)
 
 Of cause also USB auto-suspend doesn't work with these mice. The mouse only
 wakes up if pressing a button. So disable USB auto-suspend.
 
 ### Logitech USB mice
 
-The Logitech USB mice support PS/2 and USB. These usually always work fine.
-The only issue with these is usually that they pretend to support USB
-auto-suspend but actually don't. So disable it. These work fine on VTs with gpm.
+The Logitech USB mice support PS/2 and USB simultaneously. These usually always
+work fine. The only issue with these is usually that they pretend to support USB
+auto-suspend but actually don't. So disable it. These work fine on VTs with gpm
+right after starting the service.
