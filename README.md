@@ -25,7 +25,7 @@ if a quirk is required. So often quirks for mice with the same chips but
 different IDs are missing.
 
 The quirks table `hid_blacklist` is located in `drivers/hid/usbhid/hid-quirks.c`
-and the usbhid vendors/product IDs are located in `drivers/hid/hid-ids.h`
+and the usbhid vendor/product IDs are located in `drivers/hid/hid-ids.h`
 of the Linux kernel source.
 
 A usbhid quirk can also be set by the kernel boot option `usbhid.quirks`.
