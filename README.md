@@ -5,6 +5,15 @@
 Everything in this howto relates to openSUSE Leap 42.2 but is mostly applicable
 to other Linux distros as well.
 
+## Table of Contents
+
+   * [USB mice on Linux](#usb-mice-on-linux)
+      * [Linux kernel driver usbhid](#linux-kernel-driver-usbhid)
+      * [On X Window System](#on-x-window-system)
+      * [On text console/virtual terminal](#on-text-consolevirtual-terminal)
+      * [USB auto-suspend](#usb-auto-suspend-on-linux)
+      * [USB mouse disconnects/reconnects every minute](#usb-mouse-disconnectsreconnects-every-minute-on-linux)
+
 ## USB mice on Linux
 
 Many USB mice support using them as PS/2 mouse as well (e.g. with an adapter).
