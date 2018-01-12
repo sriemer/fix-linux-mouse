@@ -13,6 +13,7 @@ to other Linux distros as well.
       * [On text console/virtual terminal](#on-text-consolevirtual-terminal)
       * [USB auto-suspend](#usb-auto-suspend-on-linux)
       * [USB mouse disconnects/reconnects every minute](#usb-mouse-disconnectsreconnects-every-minute-on-linux)
+   * [USB mouse in virtual machines](#usb-mouse-in-virtual-machines)
 
 ## USB mice on Linux
 
@@ -124,3 +125,13 @@ gpm service and a reboot, or even better by the kernel boot option
 
 Of cause I've sent [a patch](http://marc.info/?l=linux-usb&m=149675002229952&w=2)
 for this to the linux-usb mailing list which got accepted.
+
+## USB mouse in virtual machines
+
+It is most common in virtual machines that the mouse cursor is not located where
+it should be. Windows VMs require absolute mouse movement and Linux VMs require
+relative mouse movement. Make sure that this is properly set e.g. in `virt-manager`.
+
+With very old Linux distributions which still use GNOME 2 like e.g. SLES11, the
+QEMU _EvTouch USB Graphics Tablet_ emulation does not work properly. Remove it
+and add a _Generic USB Mouse_ instead.
