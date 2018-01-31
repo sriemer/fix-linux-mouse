@@ -41,23 +41,28 @@ The problem is that it can only use the USB vendor ID and product ID to identify
 if a quirk is required. So often quirks for mice with the same chips but
 different IDs are missing.
 
-The quirks table `hid_blacklist` is located in `drivers/hid/usbhid/hid-quirks.c`
-and the usbhid vendor/product IDs are located in `drivers/hid/hid-ids.h`
-of the Linux kernel source.
+The quirks table `hid_blacklist` is located in
+[drivers/hid/usbhid/hid-quirks.c](http://elixir.free-electrons.com/linux/v4.15/source/drivers/hid/usbhid/hid-quirks.c#L28)
+and the `usbhid` vendor/product IDs are located in
+[drivers/hid/hid-ids.h](http://elixir.free-electrons.com/linux/v4.15/source/drivers/hid/hid-ids.h#L20)
+of the Linux kernel source. Another important kernel source file is
+[include/linux/hid.h](http://elixir.free-electrons.com/linux/v4.15/source/include/linux/hid.h#L331)
+containing the quirk defines. It shows that `HID_QUIRK_ALWAYS_POLL` has the
+value `0x00000400`.
 
 A usbhid quirk can also be set by the kernel boot option `usbhid.quirks`.
 E.g. `usbhid.quirks=0x413c:0x301a:0x00000400` sets HID_QUIRK_ALWAYS_POLL
-(0x00000400) for the Dell MS116 mouse with idVendor 0x413c and idProduct 0x301a.
+for the Dell MS116 mouse with idVendor `0x413c` and idProduct `0x301a`.
 The USB IDs can be displayed with `lsusb -vvv`.
 
 If you find out that a quirk is required for your device, then please report
-that to the linux-usb(a)vger.kernel.org mailing list to get it fixed in the
-upstream kernel.
+that to the **linux-usb(a)vger.kernel.org** mailing list to get it fixed in the
+upstream kernel. The USB developers can also help with debugging.
 
 ### On X Window System
 
-The driver package is called `xf86-input-mouse`. This just works on all Linux
-distros with all USB mice.
+The driver package is called `xf86-input-mouse`. This usually works fine on all
+Linux distros with almost all USB mice.
 
 Documentation:
 
@@ -69,7 +74,7 @@ less /usr/share/doc/packages/xf86-input-mouse/README
 ### On text console/virtual terminal
 
 If you want to use your PS/2 capable USB mouse on a VT as well, then you need
-GPM (General Purpose Mouse) from package gpm. It provides a "gpm" systemd
+GPM (General Purpose Mouse) from package `gpm`. It provides a "gpm" systemd
 service which is usually disabled by default. Its config is located at
 `/etc/sysconfig/mouse`.
 
@@ -113,7 +118,7 @@ howtos on the web for this.
 ### USB mouse disconnects/reconnects every minute on Linux
 
 Let's look at a Dell MS116 optical USB mouse. This is a PixArt OEM mouse. It
-really annoyed me that it spamed the virtual terminal and the kernel log with
+really annoyed me that it spammed the virtual terminal and the kernel log with
 USB disconnect messages every minute without a user-space driver running:
 ```
 [12334.243124] usb 3-14: USB disconnect, device number 12
@@ -131,7 +136,9 @@ gpm service and a reboot, or even better by the kernel boot option
 `usbhid.quirks=0x413c:0x301a:0x00000400` as this is a usbhid bug.
 
 Of cause I've sent [a patch](http://marc.info/?l=linux-usb&m=149675002229952&w=2)
-for this to the linux-usb mailing list which got accepted.
+for this to the **linux-usb** mailing list which got accepted. As I've sent it
+to the **linux-stable** mailing list as well, this is fixed for all Linux
+distributions now.
 
 ## USB mouse in virtual machines
 
