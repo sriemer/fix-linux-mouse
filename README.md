@@ -51,7 +51,7 @@ containing the quirk defines. It shows that `HID_QUIRK_ALWAYS_POLL` has the
 value `0x00000400`.
 
 A usbhid quirk can also be set by the kernel boot option `usbhid.quirks`.
-E.g. `usbhid.quirks=0x413c:0x301a:0x00000400` sets HID_QUIRK_ALWAYS_POLL
+E.g. `usbhid.quirks=0x413c:0x301a:0x00000400` sets `HID_QUIRK_ALWAYS_POLL`
 for the Dell MS116 mouse with idVendor `0x413c` and idProduct `0x301a`.
 The USB IDs can be displayed with `lsusb -vvv`.
 
@@ -74,7 +74,7 @@ less /usr/share/doc/packages/xf86-input-mouse/README
 ### On text console/virtual terminal
 
 If you want to use your PS/2 capable USB mouse on a VT as well, then you need
-GPM (General Purpose Mouse) from package `gpm`. It provides a "gpm" systemd
+**GPM** (General Purpose Mouse) from package `gpm`. It provides a "gpm" systemd
 service which is usually disabled by default. Its config is located at
 `/etc/sysconfig/mouse`.
 
@@ -98,7 +98,7 @@ executed as root:
 gpm -m /dev/input/mice -t help | less
 ```
 
-For imps2 it shows:
+For `imps2` it shows:
 ```
 * imps2    Microsoft Intellimouse (ps2)-autodetect 2/3 buttons,wheel unused
 ```
@@ -133,7 +133,7 @@ USB disconnect messages every minute without a user-space driver running:
 Disconnecting it physically everytime you use the VT is no good option. Its
 buffer overflows if it is not always polled. This can be fixed by activating the
 gpm service and a reboot, or even better by the kernel boot option
-`usbhid.quirks=0x413c:0x301a:0x00000400` as this is a usbhid bug.
+`usbhid.quirks=0x413c:0x301a:0x00000400` as this is a `usbhid` bug.
 
 Of cause I've sent [a patch](http://marc.info/?l=linux-usb&m=149675002229952&w=2)
 for this to the **linux-usb** mailing list which got accepted. As I've sent it
@@ -143,9 +143,10 @@ distributions now.
 ## USB mouse in virtual machines
 
 It is most common in virtual machines that the mouse cursor is not located where
-it should be. Windows VMs require absolute mouse movement and Linux VMs require
-relative mouse movement. Make sure that this is properly set e.g. in `virt-manager`.
+it should be. Windows VMs require **absolute** mouse movement and Linux VMs
+require **relative** mouse movement. Make sure that this is properly set e.g.
+in `virt-manager`.
 
 With very old Linux distributions which still use GNOME 2 like e.g. SLES11, the
-QEMU _EvTouch USB Graphics Tablet_ emulation does not work properly. Remove it
-and add a _Generic USB Mouse_ instead.
+QEMU **EvTouch USB Graphics Tablet** emulation does not work properly. Remove it
+and add a **Generic USB Mouse** instead.
