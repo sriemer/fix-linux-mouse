@@ -2,7 +2,7 @@
 
 # fix-linux-mouse howto
 
-Everything in this howto relates to openSUSE Leap 42.2 but is mostly applicable
+Everything in this howto relates to openSUSE Leap 42.3 but is mostly applicable
 to other Linux distros as well.
 
 ## Table of Contents
