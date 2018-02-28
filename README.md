@@ -27,7 +27,7 @@ Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 Many USB mice support using them as PS/2 mouse as well (e.g. with an adapter).
 They also understand the PS/2 protocol. This is important for using them on
 the text consoles/virtual terminals (VT) as well. Currently there is support
-for the USB protocol only on the X Window System on Linux.
+for the USB protocol only on the display servers on Linux.
 
 ### Linux kernel driver usbhid
 
@@ -53,6 +53,8 @@ value `0x00000400`.
 A usbhid quirk can also be set by the kernel boot option `usbhid.quirks`.
 E.g. `usbhid.quirks=0x413c:0x301a:0x00000400` sets `HID_QUIRK_ALWAYS_POLL`
 for the Dell MS116 mouse with idVendor `0x413c` and idProduct `0x301a`.
+Usually up to four usbhid quirks can be provided in a comma-separated list.
+With `HID_QUIRK_IGNORE` (`0x00000004`) it is also possible to exclude a device.
 The USB IDs can be displayed with `lsusb -vvv`.
 
 If you find out that a quirk is required for your device, then please report
