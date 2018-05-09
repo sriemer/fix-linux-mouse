@@ -2,16 +2,6 @@
 
 # fix-linux-mouse howto
 
-Everything in this howto relates to openSUSE Leap 42.3 but is mostly applicable
-to other Linux distros as well.
-
-## License
-
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-  <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
-</a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-
 ## Table of Contents
 
    * [USB mice on Linux](#usb-mice-on-linux)
@@ -21,6 +11,18 @@ Creative Commons Attribution-ShareAlike 4.0 International License</a>.
       * [USB auto-suspend](#usb-auto-suspend-on-linux)
       * [USB mouse disconnects/reconnects every minute](#usb-mouse-disconnectsreconnects-every-minute-on-linux)
    * [USB mouse in virtual machines](#usb-mouse-in-virtual-machines)
+
+## Introduction
+
+Everything in this howto relates to openSUSE Leap 42.3 but is mostly applicable
+to other Linux distros as well.
+
+## License
+
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+  <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+</a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
 ## USB mice on Linux
 
