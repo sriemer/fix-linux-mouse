@@ -6,6 +6,7 @@
 
    * [USB mice on Linux](#usb-mice-on-linux)
       * [Linux kernel driver usbhid](#linux-kernel-driver-usbhid)
+      * [On Wayland](#on-wayland)
       * [On X Window System](#on-x-window-system)
       * [On text console/virtual terminal](#on-text-consolevirtual-terminal)
       * [USB auto-suspend](#usb-auto-suspend-on-linux)
@@ -63,17 +64,47 @@ If you find out that a quirk is required for your device, then please report
 that to the **linux-usb(a)vger.kernel.org** mailing list to get it fixed in the
 upstream kernel. The USB developers can also help with debugging.
 
+### On Wayland
+
+Wayland compositors use `libinput`. On openSUSE Leap 15, the `gnome-shell`
+processes are the ones loading it. It is the user-space driver for all input
+devices.
+
+Documentation: [libinput on GitHub](https://github.com/wayland-project/libinput)
+
 ### On X Window System
 
-The driver package is called `xf86-input-mouse`. This usually works fine on all
-Linux distros with almost all USB mice.
+Modern Linux systems use `libinput` with the `xf86-input-libinput` package for
+the X server as well. This way it integrates nicely if the X server is running
+on top of Wayland to provide compatibility.
+
+Mouse support on the X Window System usually works fine on all Linux distros
+with almost all USB mice.
 
 Documentation:
+   * `man libinput`
+   * [libinput on GitHub](https://github.com/wayland-project/libinput)
 
+Alternatives are the packages `xf86-input-mouse` and `xf86-input-evdev`.
+
+Use the following command to check which input driver is running:
 ```
-man mousedrv
-less /usr/share/doc/packages/xf86-input-mouse/README
+xpid=$(pidof -s Xorg); if [ -z "$xpid" ]; then xpid=$(pidof -s X); fi; \
+sudo cat /proc/$xpid/maps | grep input
 ```
+
+The package `xf86-input-mouse` is usually only used on non-Linux systems.
+
+Documentation:
+   * `man mousedrv`
+   * `less /usr/share/doc/packages/xf86-input-mouse/README`
+
+In contrast to that, the package `xf86-input-evdev` provides another generic
+Linux input driver.
+
+Documentation:
+   * `man evdev`
+   * `less /usr/share/doc/packages/xf86-input-evdev/README`
 
 ### On text console/virtual terminal
 
