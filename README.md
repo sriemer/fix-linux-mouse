@@ -125,7 +125,8 @@ This config is exactly what we need. Just enable and start the gpm service in
 your services manager (e.g. with YaST2) and your PS/2 capable USB mouse should
 work on your VTs.
 
-Note: In some cases a reboot might be required after starting gpm.
+**Note:** In some cases a reboot might be required after enabling and starting
+gpm.
 
 The supported mouse protocols/types can be displayed with the following command
 executed as root:
