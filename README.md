@@ -44,12 +44,12 @@ The problem is that it can only use the USB vendor ID and product ID to identify
 if a quirk is required. So often quirks for mice with the same chips but
 different IDs are missing.
 
-The quirks table `hid_blacklist` is located in
-[drivers/hid/usbhid/hid-quirks.c](http://elixir.free-electrons.com/linux/v4.15/source/drivers/hid/usbhid/hid-quirks.c#L28)
+Until `v4.15`, the quirks table `hid_blacklist` is located in
+[drivers/hid/usbhid/hid-quirks.c](https://elixir.bootlin.com/linux/v4.15/source/drivers/hid/usbhid/hid-quirks.c#L28)
 and the `usbhid` vendor/product IDs are located in
-[drivers/hid/hid-ids.h](http://elixir.free-electrons.com/linux/v4.15/source/drivers/hid/hid-ids.h#L20)
+[drivers/hid/hid-ids.h](https://elixir.bootlin.com/linux/v4.15/source/drivers/hid/hid-ids.h#L20)
 of the Linux kernel source. Another important kernel source file is
-[include/linux/hid.h](http://elixir.free-electrons.com/linux/v4.15/source/include/linux/hid.h#L331)
+[include/linux/hid.h](https://elixir.bootlin.com/linux/v4.15/source/include/linux/hid.h#L331)
 containing the quirk defines. It shows that `HID_QUIRK_ALWAYS_POLL` has the
 value `0x00000400`.
 
@@ -63,6 +63,10 @@ The USB IDs can be displayed with `lsusb -vvv`.
 If you find out that a quirk is required for your device, then please report
 that to the **linux-usb(a)vger.kernel.org** mailing list to get it fixed in the
 upstream kernel. The USB developers can also help with debugging.
+
+**Recent changes:**
+   * `v4.16`: quirks moved to `hid_quirks` in
+[drivers/hid/hid-quirks.c](https://elixir.bootlin.com/linux/v4.16/source/drivers/hid/hid-quirks.c#L29)
 
 ### On Wayland
 
