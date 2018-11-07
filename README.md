@@ -175,6 +175,10 @@ buffer overflows if it is not always polled. This can be fixed by activating the
 gpm service and a reboot, or even better by the kernel boot option
 `usbhid.quirks=0x413c:0x301a:0x00000400` as this is a `usbhid` bug.
 
+The bit mask `0x00000400` activates `HID_QUIRK_ALWAYS_POLL`.
+
+For details see: [Linux kernel driver usbhid](#linux-kernel-driver-usbhid)
+
 Of cause I've sent [a patch](http://marc.info/?l=linux-usb&m=149675002229952&w=2)
 for this to the **linux-usb** mailing list which got accepted. As I've sent it
 to the **linux-stable** mailing list as well, this is fixed for all Linux
