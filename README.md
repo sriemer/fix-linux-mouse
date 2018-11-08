@@ -188,8 +188,11 @@ For details see: [Linux kernel driver usbhid](#linux-kernel-driver-usbhid)
 
 Of cause I've sent [a patch](http://marc.info/?l=linux-usb&m=149675002229952&w=2)
 for this to the **linux-usb** mailing list which got accepted. As I've sent it
-to the **linux-stable** mailing list as well, this is fixed for all Linux
+to the linux **stable** mailing list as well, this is fixed for all Linux
 distributions now.
+
+PixArt mice with this HW issue are known from vendors Chicony, Dell, HP,
+Microsoft, and PixArt (non-OEM). Please let me know if your mouse is affected.
 
 ## USB mouse in virtual machines
 
