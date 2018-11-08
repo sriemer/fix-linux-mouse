@@ -177,9 +177,9 @@ USB disconnect messages every minute without a user-space driver running:
 [12335.881821] input: PixArt Dell MS116 USB Optical Mouse as /devices/pci0000:00/0000:00:14.0/usb3/3-14/3-14:1.0/0003:413C:301A.000A/input/input19
 [12335.882034] hid-generic 0003:413C:301A.000A: input,hidraw1: USB HID v1.11 Mouse [PixArt Dell MS116 USB Optical Mouse] on usb-0000:00:14.0-14/input0
 ```
-Disconnecting it physically everytime you use the VT is no good option. Its
-buffer overflows if it is not always polled. This can be fixed by activating the
-gpm service and a reboot, or even better by the kernel boot option
+Disconnecting it physically everytime you use the VT is no good option. **Its
+buffer overflows if it is not always polled.** This can be fixed by activating
+the `gpm` service and a reboot, or even better by the kernel boot option
 `usbhid.quirks=0x413c:0x301a:0x00000400` as this is a `usbhid` bug.
 
 The bit mask `0x00000400` activates `HID_QUIRK_ALWAYS_POLL`.
