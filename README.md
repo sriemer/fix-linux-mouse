@@ -66,9 +66,10 @@ Usually up to four usbhid quirks can be provided in a comma-separated list.
 With `HID_QUIRK_IGNORE` (`0x00000004`) it is also possible to exclude a device.
 The USB IDs can be displayed with `lsusb -vvv`.
 
-If you find out that a quirk is required for your device, then please report
-that to the **linux-usb(a)vger.kernel.org** mailing list to get it fixed in the
-upstream kernel. The USB developers can also help with debugging.
+If you find out that a quirk is required for your device, then please open a
+GitHub issue here for discussion. Relevant mailing lists are **linux-usb**
+and **linux-input** on **vger.kernel.org** to get it fixed in the upstream
+kernel.
 
 **Recent changes:**
    * `v4.16`: quirks moved to `hid_quirks` in
