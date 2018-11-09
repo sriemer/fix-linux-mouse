@@ -192,7 +192,9 @@ to the linux **stable** mailing list as well, this is fixed for all Linux
 distributions now.
 
 PixArt mice with this HW issue are known from vendors Chicony, Dell, HP,
-Microsoft, and PixArt (non-OEM). Please let me know if your mouse is affected.
+Microsoft, PixArt, and Primax
+(?, [#11](https://github.com/sriemer/fix-linux-mouse/issues/11)). Please let me
+know if your mouse is affected.
 
 ## USB mouse in virtual machines
 
