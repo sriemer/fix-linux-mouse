@@ -194,7 +194,11 @@ distributions now.
 PixArt mice with this HW issue are known from vendors Chicony, Dell, HP,
 Microsoft, PixArt, and Primax
 (?, [#11](https://github.com/sriemer/fix-linux-mouse/issues/11)). Please let me
-know if your mouse is affected.
+know if your mouse is affected as **issues often persist for years**.
+
+Even some Logitech mice have similar issues and Logitech was also active in the
+OEM mouse business. E.g. the Dell MS111-L is a Logitech mouse using this quirk
+(idProduct `0xc077`).
 
 ## USB mouse in virtual machines
 
