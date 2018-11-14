@@ -186,6 +186,10 @@ The bit mask `0x00000400` activates `HID_QUIRK_ALWAYS_POLL`.
 
 For details see: [Linux kernel driver usbhid](#linux-kernel-driver-usbhid)
 
+-------
+
+**Fixing the Upstream Kernel**
+
 Of cause I've sent [a patch](http://marc.info/?l=linux-usb&m=149675002229952&w=2)
 for this to the **linux-usb** mailing list which got accepted. As I've sent it
 to the linux **stable** mailing list as well, this is fixed for all Linux
