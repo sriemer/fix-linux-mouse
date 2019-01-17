@@ -15,7 +15,7 @@
 
 ## Introduction
 
-Everything in this howto relates to openSUSE Leap 42.3 but is mostly applicable
+Everything in this howto relates to openSUSE Leap 15.0 but is mostly applicable
 to other Linux distros as well.
 
 ## License
@@ -33,10 +33,17 @@ Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
 ## USB mice on Linux
 
+USB optical mice are usually based on a single chip from PixArt Imaging.
+An example is the
+[PAN3511](https://datasheetspdf.com/pdf-file/776442/PixartImaging/PAN3511/1)
+identifying itself with USB IDs `093a:2510`.
+
 Many USB mice support using them as PS/2 mouse as well (e.g. with an adapter).
-They also understand the PS/2 protocol. This is important for using them on
-the text consoles/virtual terminals (VT) as well. Currently there is support
-for the USB protocol only on the display servers on Linux.
+They also support a PS/2 legacy data report protocol. This is important for
+using them on the text consoles/virtual terminals (VT) as well. Currently there
+is support for the general USB report protocol only on the display servers on
+Linux. See section 5 "USB Interface" in the PAN3511 datasheet for hardware
+details.
 
 ### Linux kernel driver usbhid
 
@@ -47,8 +54,9 @@ some devices to overflow. So the usbhid quirk `HID_QUIRK_ALWAYS_POLL` is often
 required for USB mice to work properly without a user-space driver running.
 
 The problem is that it can only use the USB vendor ID and product ID to identify
-if a quirk is required. So often quirks for mice with the same chips but
-different IDs are missing.
+if a quirk is required. And with more modern chips than the PAN3511, the USB IDs
+can be modified. So often quirks for mice with the same chips but different IDs
+are missing.
 
 Until `v4.15`, the quirks table `hid_blacklist` is located in
 [drivers/hid/usbhid/hid-quirks.c](https://elixir.bootlin.com/linux/v4.15/source/drivers/hid/usbhid/hid-quirks.c#L28)
