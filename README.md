@@ -89,7 +89,7 @@ Wayland compositors use `libinput`. On openSUSE Leap 15, the `gnome-shell`
 processes are the ones loading it. It is the user-space driver for all input
 devices.
 
-Documentation: [libinput on GitHub](https://github.com/wayland-project/libinput)
+Documentation: [libinput](https://wayland.freedesktop.org/libinput/doc/latest/)
 
 ### On X Window System
 
@@ -101,8 +101,8 @@ Mouse support on the X Window System usually works fine on all Linux distros
 with almost all USB mice.
 
 Documentation:
-   * `man libinput`
-   * [libinput on GitHub](https://github.com/wayland-project/libinput)
+   * `man 4 libinput`
+   * [libinput](https://wayland.freedesktop.org/libinput/doc/latest/)
 
 Alternatives are the packages `xf86-input-mouse` and `xf86-input-evdev`.
 
