@@ -50,13 +50,13 @@ details.
 All USB mice use the `usbhid` driver but an additional user-space driver is
 required. usbhid devices usually use the USB interrupt transfer. So the default
 behavior of the driver is to wait for interrupts. But this can cause buffers in
-some devices to overflow. So the usbhid quirk `HID_QUIRK_ALWAYS_POLL` is often
-required for USB mice to work properly without a user-space driver running.
+some devices to overflow. So the usbhid quirk fix `HID_QUIRK_ALWAYS_POLL` is
+often required for USB mice to work properly without a user-space driver running.
 
 The problem is that it can only use the USB vendor ID and product ID to identify
-if a quirk is required. And with more modern chips than the PAN3511, the USB IDs
-can be modified. So often quirks for mice with the same chips but different IDs
-are missing.
+if a quirk fix is required. And with more modern chips than the PAN3511, the USB
+IDs can be modified. So often quirk fixes for mice with the same chips but
+different IDs are missing.
 
 Until `v4.15`, the quirks table `hid_blacklist` is located in
 [drivers/hid/usbhid/hid-quirks.c](https://elixir.bootlin.com/linux/v4.15/source/drivers/hid/usbhid/hid-quirks.c#L28)
@@ -74,8 +74,8 @@ Usually up to four usbhid quirks can be provided in a comma-separated list.
 With `HID_QUIRK_IGNORE` (`0x00000004`) it is also possible to exclude a device.
 The USB IDs can be displayed with `lsusb -vvv`.
 
-If you find out that a quirk is required for your device, then please open a
-GitHub issue here for discussion. Relevant mailing lists are **linux-usb**
+If you find out that a quirk fix is required for your device, then please open
+a GitHub issue here for discussion. Relevant mailing lists are **linux-usb**
 and **linux-input** on **vger.kernel.org** to get it fixed in the upstream
 kernel.
 
@@ -207,9 +207,12 @@ PixArt mice with this HW issue are known from vendors Chicony, Dell, HP,
 Microsoft, PixArt, and Primax. Please let me know if your mouse is affected as
 **issues often persist for years**.
 
-Even some Logitech mice have similar issues and Logitech was also active in the
-OEM mouse business. E.g. the Dell MS111-L is a Logitech mouse using this quirk
-(idProduct `0xc077`).
+There is a strong indication that PixArt chips use **Logitech firmware** with
+that bug. Before integration, the sensor chips were usually coupled with a
+Logitech USB mouse controller IC and PixArt ICs with that bug can be found in
+Logitech mice as well. E.g. the Dell MS111-L is a Logitech PixArt mouse
+requiring the quirk fix as well (IDs `046d:c077`, see
+[#19](https://github.com/sriemer/fix-linux-mouse/issues/19)).
 
 ## USB mouse in virtual machines
 
