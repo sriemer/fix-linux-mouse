@@ -47,11 +47,12 @@ details.
 
 ### Linux kernel driver usbhid
 
-All USB mice use the `usbhid` driver but an additional user-space driver is
-required. usbhid devices usually use the USB interrupt transfer. So the default
-behavior of the driver is to wait for interrupts. But this can cause buffers in
-some devices to overflow. So the usbhid quirk fix `HID_QUIRK_ALWAYS_POLL` is
-often required for USB mice to work properly without a user-space driver running.
+All wired USB mice use the `usbhid` driver but an additional user-space driver
+is required. usbhid devices usually use the USB interrupt transfer. So the
+default behavior of the driver is to wait for interrupts. But this can cause
+buffers in some devices to overflow. So the usbhid quirk fix
+`HID_QUIRK_ALWAYS_POLL` is often required for USB mice to work properly without
+a user-space driver running.
 
 The problem is that it can only use the USB vendor ID and product ID to identify
 if a quirk fix is required. And with more modern chips than the PAN3511, the USB
