@@ -12,6 +12,7 @@
       * [USB auto-suspend](#usb-auto-suspend-on-linux)
       * [USB mouse disconnects/reconnects every minute](#usb-mouse-disconnectsreconnects-every-minute-on-linux)
    * [USB mouse in virtual machines](#usb-mouse-in-virtual-machines)
+   * [Wireless Mice](#wireless-mice)
 
 ## Introduction
 
@@ -225,3 +226,12 @@ in `virt-manager`.
 With very old Linux distributions which still use GNOME 2 like e.g. SLES11, the
 QEMU **EvTouch USB Graphics Tablet** emulation does not work properly. Remove it
 and add a **Generic USB Mouse** instead.
+
+## Wireless Mice
+
+Do yourself and people around you a favor and avoid using those due to harmful
+pulsed microwave radiation at **2.4 GHz**. The related topic is **electrosmog**.
+It can be measured e.g. with the Acousticom 2.
+
+See e.g.: https://swissharmony.com/what-is-electrosmog/<br/>
+German: https://www.elektrosmog.com/forschungsergebnisse-zu-biologischen-wirkungen-von-mikrowellen
