@@ -237,5 +237,9 @@ It can be measured e.g. with the Acousticom 2.
 See e.g.: https://swissharmony.com/what-is-electrosmog/<br/>
 German: https://www.elektrosmog.com/forschungsergebnisse-zu-biologischen-wirkungen-von-mikrowellen
 
+Especially **Logitech**/PixArt based devices are often found to be
+**not optimized** in this regard and can cause **wrist pain** as the most
+obvious effect.
+
 With the long range those can also be a major
 [security issue](https://www.theverge.com/2019/7/14/20692471/logitech-mousejack-wireless-usb-receiver-vulnerable-hack-hijack).
