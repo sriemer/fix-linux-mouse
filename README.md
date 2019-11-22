@@ -94,6 +94,22 @@ devices.
 
 Documentation: [libinput](https://wayland.freedesktop.org/libinput/doc/latest/)
 
+**List available input devices:**
+```
+zypper install libinput-tools
+libinput list-devices
+```
+
+**Test the mouse events**:
+```
+zypper install evtest
+evtest --grab /dev/input/event23
+```
+
+Use the event device which you have found for your mouse. My Dell MS116 mouse
+is at `/dev/input/event23` here. Typical events are `BTN_LEFT`, `BTN_RIGHT`,
+`BTN_MIDDLE`, `REL_X`, `REL_Y`, and `REL_WHEEL`.
+
 ### On X Window System
 
 Modern Linux systems use `libinput` with the `xf86-input-libinput` package for
