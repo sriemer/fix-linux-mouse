@@ -184,8 +184,8 @@ completely by the kernel boot option `usbcore.autosuspend=-1` to check if the
 mouse is affected.
 
 It is also possible to blacklist certain devices. It depends if they are
-controlled by the `laptop-mode-tools` or the kernel directly. There are enough
-howtos on the web for this.
+controlled by `tlp`, the `laptop-mode-tools`, or the kernel directly. There
+are enough howtos on the web for this.
 
 [openSUSE USB power management](https://en.opensuse.org/Powersaving#USB_power_management)
 
