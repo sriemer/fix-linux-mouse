@@ -78,9 +78,8 @@ With `HID_QUIRK_IGNORE` (`0x00000004`) it is also possible to exclude a device.
 The USB IDs can be displayed with `lsusb -vvv`.
 
 If you find out that a quirk fix is required for your device, then please open
-a GitHub issue here for discussion. Relevant mailing lists are **linux-usb**
-and **linux-input** on **vger.kernel.org** to get it fixed in the upstream
-kernel.
+a GitHub issue here for discussion. The relevant mailing list is **linux-input**
+on **vger.kernel.org** to get it fixed in the upstream kernel.
 
 **Recent changes:**
    * `v4.16`: quirks moved to `hid_quirks` in
@@ -218,13 +217,16 @@ For details see: [Linux kernel driver usbhid](#linux-kernel-driver-usbhid)
 **Fixing the Upstream Kernel**
 
 Of cause I've sent [a patch](http://marc.info/?l=linux-usb&m=149675002229952&w=2)
-for this to the **linux-usb** mailing list which got accepted. As I've sent it
-to the linux **stable** mailing list as well, this is fixed for all Linux
-distributions now.
+for this to the **linux-usb** mailing list (before `v4.16`) which got accepted.
+As I've sent it to the linux **stable** mailing list as well, this is fixed for
+all Linux distributions now.
 
-PixArt mice with this HW issue are known from vendors Chicony, Dell, HP,
-Microsoft, PixArt, and Primax. Please let me know if your mouse is affected as
-**issues often persist for years**.
+PixArt mice with this HW issue are known from vendors
+Alienware, Chicony, Dell, HP, Microsoft, PixArt, and Primax.<br/>
+Further suspects are Acer Lite-On, Dynex, Jesis, and Lenovo
+(see [#22](https://github.com/sriemer/fix-linux-mouse/issues/22)).<br/>
+Please let me know if your mouse is affected
+as **issues often persist for years**.
 
 There is a strong indication that PixArt chips use **Logitech firmware** with
 that bug. Before integration, the sensor chips were usually coupled with a
