@@ -250,7 +250,7 @@ and add a **Generic USB Mouse** instead.
 
 Do yourself and people around you a favor and avoid using those due to harmful
 pulsed microwave radiation at **2.4 GHz**. The related topic is **electrosmog**.
-It can be measured e.g. with the Acousticom 2.
+It can be measured e.g. with the EMFields Acousticom 2.
 
 See e.g.: https://swissharmony.com/what-is-electrosmog/<br/>
 German: https://www.elektrosmog.com/forschungsergebnisse-zu-biologischen-wirkungen-von-mikrowellen
