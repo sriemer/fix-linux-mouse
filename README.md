@@ -16,7 +16,7 @@
 
 ## Introduction
 
-Everything in this howto relates to openSUSE Leap 15.0 but is mostly applicable
+Everything in this howto relates to openSUSE Leap 15.1 but is mostly applicable
 to other Linux distros as well.
 
 ## License
@@ -87,7 +87,7 @@ on **vger.kernel.org** to get it fixed in the upstream kernel.
 
 ### On Wayland
 
-Wayland compositors use `libinput`. On openSUSE Leap 15, the `gnome-shell`
+Wayland compositors use `libinput`. In GNOME Wayland sessions, the `gnome-shell`
 processes are the ones loading it. It is the user-space driver for all input
 devices.
 
