@@ -49,9 +49,9 @@ details.
 
 ### Linux kernel driver usbhid
 
-All wired USB mice use the `usbhid` driver but an additional user-space driver
-is required. usbhid devices usually use the USB interrupt transfer. So the
-default behavior of the driver is to wait for interrupts. But this can cause
+Almost all wired USB mice use the `usbhid` driver but an additional user-space
+driver is required. usbhid devices usually use the USB interrupt transfer. So
+the default behavior of the driver is to wait for interrupts. But this can cause
 buffers in some devices to overflow. So the usbhid quirk fix
 `HID_QUIRK_ALWAYS_POLL` is often required for USB mice to work properly without
 a user-space driver running.
@@ -80,6 +80,10 @@ The USB IDs can be displayed with `lsusb -vvv`.
 If you find out that a quirk fix is required for your device, then please open
 a GitHub issue here for discussion. The relevant mailing list is **linux-input**
 on **vger.kernel.org** to get it fixed in the upstream kernel.
+
+In `hid-quirks.c` there is also a list `hid_have_special_driver` to specify which
+devices come with a special driver. This usually includes gaming mice like the
+ones from Roccat.
 
 **Recent changes:**
    * `v4.16`: quirks moved to `hid_quirks` in
