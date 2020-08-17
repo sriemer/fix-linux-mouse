@@ -226,8 +226,8 @@ As I've sent it to the linux **stable** mailing list as well, this is fixed for
 all Linux distributions now.
 
 PixArt mice with this HW issue are known from vendors
-Alienware, Chicony, Dell, HP, Microsoft, PixArt, and Primax.<br/>
-Further suspects are Acer Lite-On, Dynex, Jesis, and Lenovo
+Alienware, Chicony, Dell, HP, Lenovo, Microsoft, PixArt, and Primax.<br/>
+Further suspects are Acer Lite-On, Dynex, and Jesis
 (see [#22](https://github.com/sriemer/fix-linux-mouse/issues/22)).<br/>
 Please let me know if your mouse is affected
 as **issues often persist for years**.
