@@ -61,14 +61,14 @@ if a quirk fix is required. And with more modern chips than the PAN3511, the USB
 IDs can be modified. So often quirk fixes for mice with the same chips but
 different IDs are missing.
 
-Until `v4.15`, the quirks table `hid_blacklist` is located in
-[drivers/hid/usbhid/hid-quirks.c](https://elixir.bootlin.com/linux/v4.15/source/drivers/hid/usbhid/hid-quirks.c#L28)
+The quirks table `hid_quirks` is located in
+[drivers/hid/hid-quirks.c](https://elixir.bootlin.com/linux/v5.9/source/drivers/hid/hid-quirks.c#L27)
 and the `usbhid` vendor/product IDs are located in
-[drivers/hid/hid-ids.h](https://elixir.bootlin.com/linux/v4.15/source/drivers/hid/hid-ids.h#L20)
+[drivers/hid/hid-ids.h](https://elixir.bootlin.com/linux/v5.9/source/drivers/hid/hid-ids.h#L17)
 of the Linux kernel source. Another important kernel source file is
-[include/linux/hid.h](https://elixir.bootlin.com/linux/v4.15/source/include/linux/hid.h#L331)
+[include/linux/hid.h](https://elixir.bootlin.com/linux/v5.9/source/include/linux/hid.h#L325)
 containing the quirk defines. It shows that `HID_QUIRK_ALWAYS_POLL` has the
-value `0x00000400`.
+value `0x00000400` (`BIT(10)`).
 
 A usbhid quirk can also be set by the kernel boot option `usbhid.quirks`.
 E.g. `usbhid.quirks=0x413c:0x301a:0x00000400` sets `HID_QUIRK_ALWAYS_POLL`
@@ -86,7 +86,7 @@ devices come with a special driver. This usually includes gaming mice like the
 ones from Roccat.
 
 **Recent changes:**
-   * `v4.16`: quirks moved to `hid_quirks` in
+   * `v4.16`: quirks moved from `hid_blacklist` in [drivers/hid/usbhid/hid-quirks.c](https://elixir.bootlin.com/linux/v4.15/source/drivers/hid/usbhid/hid-quirks.c#L28) to `hid_quirks` in
 [drivers/hid/hid-quirks.c](https://elixir.bootlin.com/linux/v4.16/source/drivers/hid/hid-quirks.c#L29)
 
 ### On Wayland
