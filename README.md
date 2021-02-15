@@ -24,7 +24,8 @@ to other Linux distros as well.
 Author: **Sebastian Parschauer**
 
 This document has been created with the help of colleagues when I worked
-at SUSE. Furthermore, this work is subject to continuous improvements.
+at SUSE. But opinions are my own. Furthermore, this work is subject to
+continuous improvements.
 **All contributions are welcome.**
 Please just open issues on GitHub to start the discussion.
 
