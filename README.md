@@ -16,7 +16,7 @@
 
 ## Introduction
 
-Everything in this howto relates to openSUSE Leap 15.1 but is mostly applicable
+Everything in this howto relates to openSUSE Leap 15.3 but is mostly applicable
 to other Linux distros as well.
 
 ## License
