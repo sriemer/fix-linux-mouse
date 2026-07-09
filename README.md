@@ -38,7 +38,7 @@ Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
 USB optical mice are usually based on a single chip from PixArt Imaging.
 An example is the
-[PAN3511](https://datasheetspdf.com/pdf-file/776442/PixartImaging/PAN3511/1)
+[PAN3511](https://datasheet4u.com/pdf/776442/PAN3511.pdf)
 identifying itself with USB IDs `093a:2510`.
 
 Many USB mice support using them as PS/2 mouse as well (e.g. with an adapter).
