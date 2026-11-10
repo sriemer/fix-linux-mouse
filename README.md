@@ -63,11 +63,11 @@ IDs can be modified. So often quirk fixes for mice with the same chips but
 different IDs are missing.
 
 The quirks table `hid_quirks` is located in
-[drivers/hid/hid-quirks.c](https://elixir.bootlin.com/linux/v5.9/source/drivers/hid/hid-quirks.c#L27)
+[drivers/hid/hid-quirks.c](https://elixir.bootlin.com/linux/v7.3.1/source/drivers/hid/hid-quirks.c#L27)
 and the `usbhid` vendor/product IDs are located in
-[drivers/hid/hid-ids.h](https://elixir.bootlin.com/linux/v5.9/source/drivers/hid/hid-ids.h#L17)
+[drivers/hid/hid-ids.h](https://elixir.bootlin.com/linux/v7.3.1/source/drivers/hid/hid-ids.h#L17)
 of the Linux kernel source. Another important kernel source file is
-[include/linux/hid.h](https://elixir.bootlin.com/linux/v5.9/source/include/linux/hid.h#L325)
+[include/linux/hid.h](https://elixir.bootlin.com/linux/v7.3.1/source/include/linux/hid.h#L362)
 containing the quirk defines. It shows that `HID_QUIRK_ALWAYS_POLL` has the
 value `0x00000400` (`BIT(10)`).
 
